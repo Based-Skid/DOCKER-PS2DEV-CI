@@ -24,5 +24,5 @@ RUN git clone git://github.com/ps2dev/ps2toolchain.git /tempdir/toolchain && cd 
 RUN git clone git://github.com/ps2dev/ps2-packer.git /tempdir/ps2-packer
 #RUN make install -C /tempdir/ps2-packer 
 RUN rm -rf /tempdir
-RUN WORKDIR /src
+WORKDIR /src
 CMD ["/bin/bash"]
