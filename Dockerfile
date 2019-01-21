@@ -1,4 +1,4 @@
-FROM debian:9.6	
+FROM ubuntu:12.04
 
 MAINTAINER Based_Skid <based_sec@protonmail.com>
 
