@@ -16,7 +16,13 @@ RUN apt-get update && apt-get upgrade -y
 
 # Install Packages
 
-RUN apt-get install -y gcc autoconf bzip2 vim zip make patch git wget nano libjpeg-dev libpng-dev libtiff5-dev libsdl2-image-dev libucl-dev 
-
-WORKDIR /src
+RUN apt-get install -y gcc autoconf bzip2 vim zip zliblg-dev make patch git wget nano libjpeg-dev libpng-dev libtiff5-dev libsdl2-image-dev libucl-dev 
+mkdir /tempdir
+RUN git clone git://github.com/ps2dev/ps2toolchain.git && cd /tempdir/toolchain && ./toolchain-sudo.sh
+#git clone git://github.com/ps2dev/ps2eth.git /ps2dev/ps2eth \
+#&& make -C /ps2dev/ps2eth \
+RUN git clone git://github.com/ps2dev/ps2-packer.git /tempdir/ps2-packer
+RUN make install -C /tempdir/ps2-packer 
+RUN rm -rf /tempdir
+RUN WORKDIR /src
 CMD ["/bin/bash"]
