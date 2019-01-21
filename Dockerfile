@@ -1,3 +1,5 @@
+FROM debian:9.6	
+
 MAINTAINER Based_Skid <based_sec@protonmail.com>
 
 # ENV TOOLCHAIN_VERSION master
